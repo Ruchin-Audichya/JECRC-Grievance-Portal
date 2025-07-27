@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* JECRC SolveIt Design System
+Primary Color: JECRC Red (#800000)
+Secondary Color: JECRC Gold (#FFD700)
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core JECRC Brand Colors */
+    --jecrc-red: 0 100% 25%;           /* #800000 */
+    --jecrc-gold: 51 100% 50%;         /* #FFD700 */
+    
+    /* Status Colors */
+    --success: 142 76% 36%;            /* #22C55E */
+    --warning: 25 95% 53%;             /* #F97316 */
+    --error: 0 84% 60%;                /* #EF4444 */
+    
+    /* Neutral Colors */
+    --neutral-50: 0 0% 97%;            /* #F8F8F8 */
+    --neutral-700: 0 0% 20%;           /* #333333 */
+    
+    /* Semantic Design Tokens */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;            /* Using neutral-700 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    --primary: 0 100% 25%;             /* JECRC Red */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 51 100% 50%;          /* JECRC Gold */
+    --secondary-foreground: 0 0% 20%;
+
+    --muted: 0 0% 97%;                 /* neutral-50 */
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 51 100% 50%;             /* JECRC Gold */
+    --accent-foreground: 0 0% 20%;
+
+    --destructive: 0 84% 60%;          /* error */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 100% 25%;                /* JECRC Red */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode maintains JECRC branding */
+    --background: 0 0% 9%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 100% 40%;             /* Lighter JECRC Red for dark mode */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 51 100% 60%;          /* Lighter JECRC Gold for dark mode */
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 51 100% 60%;             /* Lighter JECRC Gold */
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 100% 40%;
+    --sidebar-background: 0 0% 9%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 100% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 100% 40%;
+  }
+  
+  /* JECRC Brand Utilities */
+  .jecrc-gradient {
+    background: linear-gradient(135deg, hsl(var(--jecrc-red)), hsl(var(--jecrc-gold)));
+  }
+  
+  .jecrc-text-gradient {
+    background: linear-gradient(135deg, hsl(var(--jecrc-red)), hsl(var(--jecrc-gold)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .jecrc-btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-md transition-all duration-200;
+  }
+  
+  .jecrc-btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-md transition-all duration-200;
+  }
+  
+  .jecrc-card-hover {
+    @apply hover:shadow-lg hover:border-primary/20 transition-all duration-200;
+  }
+  
+  .jecrc-border-accent {
+    @apply border-primary/20 hover:border-primary/40 transition-colors;
+  }
+  
+  .jecrc-header-gradient {
+    background: linear-gradient(135deg, hsl(var(--jecrc-red))/0.02, hsl(var(--jecrc-gold))/0.05);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
